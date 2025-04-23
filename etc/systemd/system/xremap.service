@@ -1,0 +1,11 @@
+[Unit]
+Description=xremap
+
+[Service]
+ExecStart=/usr/bin/xremap /etc/xremap.yml
+Restart=always
+ExecReload=/bin/kill -SIGHUP $MAINPID
+
+[Install]
+Alias=xremap.service
+WantedBy=multi-user.target

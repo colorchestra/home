@@ -1,0 +1,29 @@
+#!/bin/bash
+
+case "$1" in
+    cs)
+        nvim $HOME/.config/sway/config ;;
+    cb|cw)
+        nvim $HOME/.config/waybar/config ;;
+    p)
+        cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 24 | head -n 1 | tee >(xclip) ;;
+    u|unlock)
+	sudo cryptsetup luksOpen /dev/sda1 violet-sd
+	sudo mount /dev/mapper/violet-sd ~/mnt/
+	ln -s ~/mnt/thunderbird ~/.thunderbird
+	ln -s ~/mnt/joplin ~/.config/joplin-desktop
+	;;
+    x)
+        /bin/sleep 5s && /usr/bin/xdotool type "$(xclip -o)" ;;
+    *)
+        echo "no valid shortcut specified, exiting."
+        cat << EOF
+  cs: edit Sway config
+  cb|cw: edit Waybar config
+  p: print randomly created string and pipe it to xclip
+  u: unlock SD card and mount directories on there
+  x: sleep 5s and xdotool type zwischenablage
+EOF
+        ;;
+        
+esac

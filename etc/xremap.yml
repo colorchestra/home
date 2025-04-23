@@ -1,0 +1,8 @@
+keymap:
+  - name: capslock-vim
+    remap:
+      Super-h: left
+      Super-j: down
+      Super-k: up
+      Super-l: right
+
