@@ -1,0 +1,6 @@
+- [ ] get software
+  - [ ] y
+  - [ ] disco
+  - [ ] aaa?
+- [ ] .bash_aliases shortcuts etc
+- [ ] .bash_profile

@@ -1,0 +1,11 @@
+[Unit]
+Description=Logitech Mouse Driver
+
+[Service]
+ExecStart=/usr/bin/logid
+Restart=always
+ExecReload=/bin/kill -SIGHUP $MAINPID
+
+[Install]
+Alias=logi.service
+WantedBy=multi-user.target

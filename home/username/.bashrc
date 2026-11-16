@@ -31,4 +31,3 @@ source /home/morph/y/completion.sh
 # cargo
 export PATH="/home/morph/.cargo/bin:$PATH"
 
-alias nv="nvim"
